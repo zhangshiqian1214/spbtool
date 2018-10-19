@@ -1,16 +1,17 @@
 # spbtool
-用来生成sproto的spb文件,类似于google protobuf生成出来的pb文件. 生成的spb文件可以直接被客户端和服务器加载, 而不需要lpeg等语法树的支持  
+## 用来生成sproto的spb文件,类似于google protobuf生成出来的pb文件. 生成的spb文件可以直接被客户端和服务器加载, 而不需要lpeg等语法树的支持 
+
 > cocos creator可以通过http的方式加载取得spb文件内容, 还可以使用生成出来的base64版本的spb文件直接使用creator api loadRes加载  
 
 > cocos2dx lua 可以通过集成云风的sproto库直接使用
 
 > skynet 直接载入文件就可以使用 
 
-## 如何使用spbtool生成spb文件
+### 如何使用spbtool生成spb文件
 
-### 1. windows系统里面必须有以动态库生成的lua53或者直接下载zerobrane studio安装后使用zerobrane里的bin目录的lua53
+#### 1. windows系统里面必须有以动态库生成的lua53或者直接下载zerobrane studio安装后使用zerobrane里的bin目录的lua53
 
-### 2. 在sublime里面新一个lua53的编译系统
+#### 2. 在sublime里面新一个lua53的编译系统
 ```json
 {
 	"cmd": ["D:/softinstall/ZeroBraneStudio/bin/lua53.exe", "$file"], 
@@ -19,7 +20,7 @@
 }
 ```
 
-### 3. 用sublime打开GenerateSpb.lua 并编缉原始sproto文件路径和生成的spb文件路径, Ctrl+B执行脚本
+#### 3. 用sublime打开GenerateSpb.lua 并编缉原始sproto文件路径和生成的spb文件路径, Ctrl+B执行脚本
 ```lua
 local sprotodump = require "sprotodump"
 
