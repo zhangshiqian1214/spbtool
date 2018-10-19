@@ -5,13 +5,24 @@
 
 auth {
 	
-	.Player {
+	.Friend {
 		playerid 0 : integer
 		nickname 1 : string
-		headid 2 : integer
-		headurl 3 : string
-		sex 4 : integer #0-未知 1-男 2-女
-		gold 5 : integer #金币
+	}
+
+	.Player {
+		playerid   0 : integer            #玩家id
+		nickname   1 : string             #昵称
+		headid     2 : integer            #默认头像id
+		headurl    3 : string             #头像地址
+		sex        4 : integer            #0-未知 1-男 2-女
+		isvip      5 : boolean            #是否是vip
+		gold       6 : integer            #金币
+		signs      7 : *boolean           #签到列表
+		pets       8 : *integer           #宠物id
+		mails      9 : *string            #邮件列表
+		friends   10 : *Friend(playerid)  #带playerid键值
+		money     11 : integer(2)         #带2位小数的货币
 	}
 
 	login 101 {
