@@ -1,0 +1,49 @@
+# ##############################################
+# 登录鉴权
+# 有关于登录模块的结构体和方法
+# ##############################################
+
+auth {
+	
+	.Player {
+		playerid 0 : integer
+		nickname 1 : string
+		headid 2 : integer
+		headurl 3 : string
+		sex 4 : integer #0-未知 1-男 2-女
+		gold 5 : integer #金币
+	}
+
+	login 101 {
+		request {
+			account   0 : string  #帐号
+			password  1 : string  #密码
+			channelid 2 : string  #渠道id
+		}
+		response {
+			player 0 : Player
+		}
+	}
+
+	wx_login 102 {
+		request {
+			appid     0 : string
+			secret    1 : string
+			code      2 : string
+			channelid 3 : string
+		}
+		response {
+			player 0 : Player
+		}
+	}
+
+	phone_login 103 {
+		request {
+			phoneno   0 : string  #手机号
+			vacode    1 : string  #验证码
+		}
+		response {
+			player 0 : Player
+		}
+	}
+}

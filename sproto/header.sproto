@@ -1,0 +1,19 @@
+
+# ##############################################
+# 网络包的头部 header
+# 网络包的组成 |header| + |data|
+# 协议ID[0-65499]: 模块ID[0-654] + 方法ID[0-99]
+# ##############################################
+
+
+.Context {
+	errorcode   0 : integer    #错误码
+	sessionid   1 : string     #会话id
+	serverprx   2 : string     #服务器代理
+}
+
+.Header {
+	type    0 : integer        #协议号
+	session 1 : integer        #客户端自增请求id
+	ud      2 : Context        #额外携带的内容
+}
