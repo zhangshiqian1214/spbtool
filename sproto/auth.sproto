@@ -23,6 +23,7 @@ auth {
 		mails      9 : *string            #邮件列表
 		friends   10 : *Friend(playerid)  #带playerid键值
 		money     11 : integer(2)         #带2位小数的货币
+		master    12 : Friend             #结构体
 	}
 
 	login 101 {
